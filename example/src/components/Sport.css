@@ -1,0 +1,40 @@
+:root {
+  --whiteDark: #afafaf;
+  --white: #ffffff;
+  --red: #e31b23;
+  --bodyColor: hsl(210, 2%, 16%);
+  --borderFormEls: hsl(0, 0%, 10%);
+  --bgFormEls: hsl(0, 0%, 14%);
+  --bgFormElsFocus: hsl(0, 7%, 20%);
+  --btnColor: hsl(210, 100%, 56%);
+  --greenHover: rgb(0, 171, 102);
+}
+
+body {
+  background-color: #292a2b;
+}
+table {
+  width: 70%;
+  margin: 48px auto;
+  border-collapse: collapse;
+  color: var(--whiteDark);
+  font-size: 1.5em;
+}
+table th {
+  background-color: var(--bgFormEls);
+  color: var(--white);
+  font-size: 1.7em;
+}
+table td,
+table th {
+  border: 1 px solid var(--borderFormEls);
+  padding: 12px;
+}
+table tr:nth-child(even) {
+  background-color: hsla(240, 7%, 3%, 0.317);
+}
+
+table tr:hover {
+  background-color: hsla(240, 7%, 3%, 0.517);
+  color: var(--white);
+}

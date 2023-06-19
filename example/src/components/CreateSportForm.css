@@ -1,0 +1,66 @@
+:root {
+  --whiteDark: #afafaf;
+  --white:#ffffff;
+  --red: #e31b23;
+  --bodyColor: #292a2b;
+  --borderFormEls: hsl(0, 0%, 10%);
+  --bgFormEls: hsl(0, 0%, 14%);
+  --bgFormElsFocus: hsl(0, 7%, 20%);
+  --btnColor: hsl(210, 100%, 56%);
+  --greenHover: rgb(0, 171, 102);
+}
+
+h1 {
+  color: var(--white);
+  border-bottom: 2px solid var(--white);
+  font-size: 4em;
+  width: fit-content;
+  margin: 48px auto;
+}
+
+form {
+  width: 60%;
+  margin: 0 auto;
+  color: var(--whiteDark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background: var(--bodyColor);
+  font-size: 1.5em;
+
+  box-shadow: 0px 0px 10px 2px rgb(24 22 22);
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  width: 100%;
+  color: var(--whiteDark);
+}
+
+.inputField label {
+  margin-bottom: 0.5em;
+}
+
+.inputField input {
+  padding: 0.5em;
+  background: var(--bgFormEls);
+  color: var(--whiteDark);
+  border: 1px solid var(--borderFormEls);
+  font-size: 1.3em;
+}
+
+input[type="submit"] {
+  padding: 16px;
+  background-color: var(--btnColor);
+  border: none;
+  color: var(--white);
+  font-size: 1.5em;
+  border-radius: 16px;
+}
+input[type="submit"]:hover {
+  background-color: var(--greenHover);
+  cursor: pointer;
+}
