@@ -32,6 +32,25 @@ function Sport() {
     console.log(sports);
   }
 
+  function handleSave(updatedSport) {
+    const updatedSports = sports.map((s) => {
+      if (s.Id === updatedSport.Id) {
+        return updatedSport;
+      }
+      return s;
+    });
+    setSports(updatedSports);
+  }
+  
+  // ...
+  
+  <SportList
+    sports={sports}
+    handleChange={handleChange}
+    handleSave={handleSave}
+  />
+  
+  
   return (
     <div>
       <CreateSportForm
@@ -48,7 +67,7 @@ function Sport() {
               <th>Type</th>
             </tr>
           </thead>
-          <SportList sports={sports} />
+          <SportList sports={sports} handleChange={handleChange} handleSubmit={handleSubmit} handleSave={handleSave}/>
         </table>
       ) : (
         <br></br>

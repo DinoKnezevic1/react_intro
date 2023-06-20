@@ -6,15 +6,15 @@ function CreateSportForm(props) {
     <div>
         <h1>Create sport</h1>
     <form onSubmit={props.handleSubmit}>
-      <div class="inputField">
+      <div className="inputField">
         <label htmlFor="Id">Id:</label>
         <input type="text" id="Id" name="Id" value={props.sport.Id} onChange={props.handleChange} />
       </div>
-      <div class="inputField">
+      <div className="inputField">
         <label htmlFor="Name">Name:</label>
         <input type="text" id="Name" name="Name" value={props.sport.Name} onChange={props.handleChange} />
       </div>
-      <div class="inputField">
+      <div className="inputField">
         <label htmlFor="Type">Type:</label>
         <input type="text" id="Type" name="Type" value={props.sport.Type} onChange={props.handleChange} />
       </div>

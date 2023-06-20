@@ -1,11 +1,12 @@
-import './Sport.css';
+import { useState } from "react";
+import "./Sport.css";
 import SportRow from "./SportRow";
 
-function SportList({ sports }) {
+function SportList({ sports, handleChange, handleSubmit,handleSave }) {
   return (
     <tbody>
       {sports.map((sport, index) => (
-        <SportRow key={index} sport={sport} />
+        <SportRow key={index} sport={sport} handleChange={handleChange} handleSubmit={handleSubmit} handleSave={handleSave} />
       ))}
     </tbody>
   );
