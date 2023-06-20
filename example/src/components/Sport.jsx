@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import React from "react";
+import axios from "axios";
+import CustomerService from "../services/CustomerService.js";
+//import axiosClient from "../axiosClient";
 import "./Sport.css";
 import CreateSportForm from "./CreateSportForm";
 import SportList from "./SportList";
@@ -12,6 +16,7 @@ function Sport() {
   });
 
   const [sports, setSports] = useState([]);
+
 
   function handleChange(event) {
     setSport((sport) => ({
@@ -27,6 +32,9 @@ function Sport() {
       Name: sport.Name,
       Type: sport.Type,
     };
+
+    //console.log(result.data);
+
     setSports([...sports, newSport]);
     setSport({ Id: 0, Name: "", Type: "" });
     console.log(sports);
@@ -41,18 +49,10 @@ function Sport() {
     });
     setSports(updatedSports);
   }
-  
-  // ...
-  
-  <SportList
-    sports={sports}
-    handleChange={handleChange}
-    handleSave={handleSave}
-  />
-  
-  
+
   return (
     <div>
+      {/* <span>{result}</span> */}
       <CreateSportForm
         sport={sport}
         handleChange={handleChange}
@@ -67,7 +67,12 @@ function Sport() {
               <th>Type</th>
             </tr>
           </thead>
-          <SportList sports={sports} handleChange={handleChange} handleSubmit={handleSubmit} handleSave={handleSave}/>
+          <SportList
+            sports={sports}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            handleSave={handleSave}
+          />
         </table>
       ) : (
         <br></br>
