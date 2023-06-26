@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import CustomerService from "../services/CustomerService";
+import CustomerRow from "./CustomerRow";
 
-function CustomersList({ customers,customer,getCustomer }) {
+function CustomersList({ customers, customer, getCustomer }) {
   return (
     <table>
       <thead>
@@ -13,12 +14,13 @@ function CustomersList({ customers,customer,getCustomer }) {
       </thead>
       <tbody>
         {customers.map((customer) => (
-          <tr key={customer.Id}>
-            <td>{customer.Id}</td>
-            <td>{customer.FirstName}</td>
-            <td>{customer.LastName}</td>
-            <button onClick={() => getCustomer(customer.Id)}>Info</button>
-          </tr>
+        //   <tr key={customer.Id}>
+        //     <td>{customer.Id}</td>
+        //     <td>{customer.FirstName}</td>
+        //     <td>{customer.LastName}</td>
+        //     <td><input type="button" value="Info" onClick={()=>getCustomer(customer.Id)} /></td>
+        //   </tr>
+          <CustomerRow key={customer.Id} {...customer}/>
         ))}
       </tbody>
     </table>
